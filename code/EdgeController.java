@@ -65,27 +65,7 @@ public class EdgeController {
         TypeACurveGenerator A_pro_gen = new TypeACurveGenerator(rBits, qBits);
         PairingParameters type_A_params = A_pro_gen.generate();
         Pairing pairing = PairingFactory.getPairing(type_A_params);
-        /*
-         * Zq = pairing.getZr();
-         * G1 = pairing.getG1();
-         * 
-         * // Edge controller choose alpha, beta, gamma, s
-         * alpha = Zq.newRandomElement().getImmutable();
-         * beta = Zq.newRandomElement().getImmutable();
-         * gamma = Zq.newRandomElement().getImmutable();
-         * s = Zq.newRandomElement().getImmutable();
-         * 
-         * // Edge controller choose g, trapdoor function(F) and calculate g, g1, and g2
-         * // g
-         * g = G1.newRandomElement().getImmutable();
-         * // h = g^gamma
-         * h = g.powZn(gamma.duplicate());
-         * // g1 = g^beta
-         * g1 = g.powZn(beta.duplicate()).duplicate();
-         * // g2 = e(g,h)^alpha
-         * Element pair2 = h.duplicate();
-         * g2 = pairing.pairing(g, pair2).powZn(alpha.duplicate());
-         */
+       
         Setup(pairing);
         long Setup_endTime = System.currentTimeMillis();
         long Setup_durationMillis = Setup_endTime - Setup_startTime;
@@ -131,33 +111,6 @@ public class EdgeController {
         System.out.println("-------------------------------------------");
 
         long KeyGen_startTime = System.currentTimeMillis();
-        /*
-         * byte[] decodedBytes = Base64.getDecoder().decode(ciphertext);
-         * Element r_i = G1.newElementFromBytes(decodedBytes);
-         * // user secret key
-         * SK_i = g.powZn(r_i.duplicate()).duplicate();
-         * 
-         * // ZC_j(Zonal controller)
-         * // Control key = (rs, g^delta_j) = (l1,l2)
-         * delta_j = Zq.newRandomElement();
-         * e_j = Zq.newRandomElement().getImmutable();
-         * // l1 = rs
-         * l1 = gamma.duplicate().mul(s.duplicate());
-         * 
-         * // l2 = g^delta_j
-         * l2 = g.powZn(delta_j.duplicate()).duplicate();
-         * // public key = (g^e_j, g^delta_j.e_j) = (J1, J2)
-         * // J1 = g^e_j
-         * J1 = g.powZn(e_j.duplicate()).duplicate();
-         * // J2 = g^(delta_j.e_j)
-         * tmp = delta_j.mul(e_j);
-         * J2 = g.powZn(tmp.duplicate()).duplicate();
-         * 
-         * // ED_k(Edge device)
-         * SK_k = Zq.newRandomElement().getImmutable();
-         * tmp = e_j.duplicate().mul(SK_k.duplicate());
-         * PK_k = g.powZn(tmp.duplicate()).duplicate();
-         */
         KeyGen();
         long KeyGen_endTime = System.currentTimeMillis();
         long KeyGen_durationMillis = KeyGen_endTime - KeyGen_startTime;
@@ -234,7 +187,8 @@ public class EdgeController {
 
         // File upload
         long file_upload_startTime = System.currentTimeMillis();
-        String filePath = "C:\\Users\\ethan\\Desktop\\test.txt";
+        // Change the filePath to upload or download 
+        String filePath = "C:\\Users\\XXX\\Desktop\\test.txt";
         File file = new File(filePath);
         try {
             // try to open file
@@ -266,32 +220,7 @@ public class EdgeController {
 
         // File download
         long U_algo_startTime = System.currentTimeMillis();
-        /*
-         * psi = Zq.newRandomElement().getImmutable();
-         * // Compute_psi= e(J2,g^psi)
-         * tmp = g.powZn(psi.duplicate()).duplicate();
-         * big_psi = pairing.pairing(J2, tmp);
-         * // R = H(ID_b) XOR H(psi)
-         * byte[] ID_b = new byte[] { 1, 2, 3 };
-         * byte[] IDb_hash = digest.digest(ID_b);
-         * byte[] big_psi_arr = big_psi.toBytes();
-         * byte[] big_psi_hash = digest.digest(big_psi_arr);
-         * R = new byte[IDb_hash.length];
-         * for (int i = 0; i < R.length; i++) {
-         * R[i] = (byte) (IDb_hash[i] ^ big_psi_hash[i]);
-         * }
-         * // phi = e(Pk_k, g^psi)
-         * phi = pairing.pairing(PK_k, tmp);
-         * // CT_phi = SE(phi, R || index || f_addr)
-         * byte[] combinedBytes_1 = combination.concatenate(R, index);
-         * byte[] file_addr = filePath.getBytes();
-         * byte[] combinedBytes_2 = combination.concatenate(combinedBytes_1, file_addr);
-         * byte[] byteArray_phi = phi.toBytes();
-         * byte[] phi_hash = digest.digest(byteArray_phi);
-         * String hashString_phi = bytesToHex(phi_hash);
-         * String hashString_phi_32 = hashString_phi.substring(0, 32);
-         * String str_R_ind_add = new String(combinedBytes_2);
-         */
+        
         req_part1(pairing, filePath);
         CT_phi = use.encryptAES(str_R_ind_add, hashString_phi_32, mode, IV);
         // acc_token(X1, X2,X3) = (CT_phi, J1^psi, h^psi)
@@ -334,19 +263,6 @@ public class EdgeController {
         System.out.println("The GR algorithm run time is: " + GR_algo_durationMillis + " milliseconds");
 
         long Decrypt_startTime = System.currentTimeMillis();
-        /*
-         * U = pairing.pairing(SK_i, C3);
-         * V = pairing.pairing(C2_prime, K_i);
-         * W_tmp = C1.mul(U);
-         * Element inverse_V = V.invert();
-         * W = W_tmp.mul(inverse_V);
-         * boolean isEqual2 = element_f_key.isEqual(W);
-         * if (isEqual2) {
-         * System.out.println("W and f_key are equal.");
-         * } else {
-         * System.out.println("W and f_key are not equal.");
-         * }
-         */
         Decrypt(pairing, SK_i, element_f_key);
         long Decrypt_endTime = System.currentTimeMillis();
         long Decrypt_durationMillis = Decrypt_endTime - Decrypt_startTime;
