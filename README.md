@@ -57,4 +57,5 @@ Make sure you have installed the [Java Extension Pack](https://marketplace.visua
 ## 📷 Sample Output
 
 Below is a sample output from running `EdgeController.java` in the VS Code terminal:
-![imgae]([https://postimg.cc/hXTvGh9n](https://i.postimg.cc/P5Fw2wJC/Screenshot-2025-07-23-174434.png)
+
+![imgae](https://i.postimg.cc/P5Fw2wJC/Screenshot-2025-07-23-174434.png)
