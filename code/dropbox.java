@@ -18,7 +18,7 @@ import com.dropbox.core.v2.users.FullAccount;
 public class dropbox {
     // The ACCESS TOKEN needs to be refreshed periodically.
     // You need to apply on the Dropbox website to obtain it.
-    private static final String ACCESS_TOKEN = "sl.Bz4Jg4UCw8atMgz4SI57fpF6UenQb6zSazRT-CaxRpoUnzK6C7qkrByKBJqfvtLuL-mf1H5dGb0nhsN9gq7q88Eo9Hdo7V7hF--mPVmGT5Gm2vbKZpbMyInJady6cedE38verOL25bvt-EgXQPQG";
+    private static final String ACCESS_TOKEN = "USE THE ACCESS TOKEN FROM DROPBOX";
 
     public static void main(String args[]) throws DbxException {
         System.out.println("Please wait");
@@ -29,9 +29,9 @@ public class dropbox {
         FullAccount account = client.users().getCurrentAccount();
         System.out.println(account.getName().getDisplayName());
 
-        uploadFile("test.txt", "C:\\Users\\ethan\\Desktop\\test.txt");
+        uploadFile("test.txt", "C:\\Users\\XXX\\Desktop\\test.txt");
 
-        getFile("第八組_旺萊山的法槌2.pptx", "C:\\Users\\ethan\\Desktop\\第八組_旺萊山的法槌2.pptx");
+        getFile("file_name.pptx", "C:\\Users\\XXX\\Desktop\\file_name.pptx");
     }
 
     public static void uploadFile(String file, String path) {
