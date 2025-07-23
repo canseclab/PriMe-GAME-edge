@@ -1,17 +1,17 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "c:\\Users\\ethan\\Desktop\\jar_folder\\jar_jpbc\\jars\\jna-3.2.5.jar",
-        "c:\\Users\\ethan\\Desktop\\jar_folder\\jar_jpbc\\jars\\jpbc-api-2.0.0.jar",
-        "c:\\Users\\ethan\\Desktop\\jar_folder\\jar_jpbc\\jars\\jpbc-benchmark-2.0.0.jar",
-        "c:\\Users\\ethan\\Desktop\\jar_folder\\jar_jpbc\\jars\\jpbc-crypto-2.0.0.jar",
-        "c:\\Users\\ethan\\Desktop\\jar_folder\\jar_jpbc\\jars\\jpbc-mm-2.0.0.jar",
-        "c:\\Users\\ethan\\Desktop\\jar_folder\\jar_jpbc\\jars\\jpbc-pbc-2.0.0.jar",
-        "c:\\Users\\ethan\\Desktop\\jar_folder\\jar_jpbc\\jars\\jpbc-plaf-2.0.0.jar",
-        "c:\\Users\\ethan\\Desktop\\jar_folder\\org-apache-commons-codec.jar",
-        "c:\\Users\\ethan\\Desktop\\jar_folder\\dropbox\\jackson-core-2.15.0.jar",
-        "c:\\Users\\ethan\\Desktop\\jar_folder\\dropbox\\jsr305-3.0.2.jar",
-        "c:\\Users\\ethan\\Desktop\\jar_folder\\dropbox\\dropbox-core-sdk-6.1.0.jar"
+        "c:\\Users\\XXX\\Desktop\\jar_folder\\jar_jpbc\\jars\\jna-3.2.5.jar",
+        "c:\\Users\\XXX\\Desktop\\jar_folder\\jar_jpbc\\jars\\jpbc-api-2.0.0.jar",
+        "c:\\Users\\XXX\\Desktop\\jar_folder\\jar_jpbc\\jars\\jpbc-benchmark-2.0.0.jar",
+        "c:\\Users\\XXX\\Desktop\\jar_folder\\jar_jpbc\\jars\\jpbc-crypto-2.0.0.jar",
+        "c:\\Users\\XXX\\Desktop\\jar_folder\\jar_jpbc\\jars\\jpbc-mm-2.0.0.jar",
+        "c:\\Users\\XXX\\Desktop\\jar_folder\\jar_jpbc\\jars\\jpbc-pbc-2.0.0.jar",
+        "c:\\Users\\XXX\\Desktop\\jar_folder\\jar_jpbc\\jars\\jpbc-plaf-2.0.0.jar",
+        "c:\\Users\\XXX\\Desktop\\jar_folder\\org-apache-commons-codec.jar",
+        "c:\\Users\\XXX\\Desktop\\jar_folder\\dropbox\\jackson-core-2.15.0.jar",
+        "c:\\Users\\XXX\\Desktop\\jar_folder\\dropbox\\jsr305-3.0.2.jar",
+        "c:\\Users\\XXX\\Desktop\\jar_folder\\dropbox\\dropbox-core-sdk-6.1.0.jar"
     ],
     "java.compile.nullAnalysis.mode": "automatic"
 }
