@@ -1,5 +1,5 @@
-# ReADSaFe  
-### Reliable Multi-Receiver Anonymous Data Sharing Protocol with Fine-Grained Access in Clouds-Assisted IoT-Edge Environment
+# PriMe-GAME  
+### Privacy-Preserving Multi-Receiver Data Sharing with Granular Access in Multi-Cloud-Assisted Edge Systems
 
 This edge-side implementation ensures that data is encrypted before being reliably and anonymously uploaded to cloud storage, enabling secure multi-receiver sharing with fine-grained access control.
 
